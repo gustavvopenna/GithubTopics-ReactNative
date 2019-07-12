@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ScrollView, SafeAreaView } from 'react-native'
 import styled from 'styled-components'
 import { NotificationIcon } from '../components/Icons'
@@ -7,7 +7,11 @@ import Topics from '../components/Topics'
 import Subtitle from '../components/Subtitle'
 import TopicDescription from '../components/TopicDescription'
 
-const HomeScreen = () => {
+const HomeScreen = props => {
+  useEffect(() => {
+    console.log(props)
+  }, [])
+
   return (
     <Container>
       <TopicDescription />
@@ -23,7 +27,7 @@ const HomeScreen = () => {
           </TitleBar>
           <SearchBar />
           <Subtitle text="Results" />
-          <Topics />
+          <Topics navigation={props.navigation} />
         </ScrollView>
       </SafeAreaView>
     </Container>

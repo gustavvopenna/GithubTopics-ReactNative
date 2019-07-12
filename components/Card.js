@@ -7,19 +7,15 @@ import GithubContext from '../context/github/githubContext'
 const Card = props => {
   const githubContext = useContext(GithubContext)
 
-  printResults = () => {
-    //console.log(githubContext.topics, 'printResults')
-    console.log(githubContext.textFromSearch, 'printTextInput')
-  }
+  // printResults = () => {
+  //   //console.log(githubContext.topics, 'printResults')
+  //   console.log(githubContext.textFromSearch, 'printTextInput')
+  // }
 
   return (
     <Container>
-      <TouchableOpacity onPress={this.handleSubmit}>
-        <Title>{props.title}</Title>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={this.printResults}>
-        <Subtitle>{props.subtitle}</Subtitle>
-      </TouchableOpacity>
+      <Title>{props.title}</Title>
+      <Subtitle>{props.subtitle}</Subtitle>
     </Container>
   )
 }
