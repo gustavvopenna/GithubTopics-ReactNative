@@ -3,12 +3,12 @@ import { TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 
 const Card = props => (
-  <TouchableOpacity>
-    <Container>
+  <Container>
+    <TouchableOpacity>
       <Title>{props.title}</Title>
-      <Subtitle>{props.subtitle}</Subtitle>
-    </Container>
-  </TouchableOpacity>
+    </TouchableOpacity>
+    <Subtitle>{props.subtitle}</Subtitle>
+  </Container>
 )
 
 export default Card
@@ -25,6 +25,7 @@ const Container = styled.View`
 `
 
 const Title = styled.Text`
+  width: 50%;
   color: #4775f2;
   font-size: 22px;
   font-weight: bold;

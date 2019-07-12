@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, ScrollView } from 'react-native'
 import styled from 'styled-components'
 import { NotificationIcon } from './components/Icons'
 import { Icon } from 'expo'
@@ -36,9 +36,11 @@ export default function App() {
         </TouchableOpacity>
       </InputWrapper>
       <Subtitle>Results</Subtitle>
-      {topics.map((topic, i) => (
-        <Card key={i} title={topic.name} subtitle={topic.short_description} />
-      ))}
+      <ScrollView>
+        {topics.map((topic, i) => (
+          <Card key={i} title={topic.name} subtitle={topic.short_description} />
+        ))}
+      </ScrollView>
     </Container>
   )
 }
