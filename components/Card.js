@@ -8,7 +8,8 @@ const Card = props => {
   const githubContext = useContext(GithubContext)
 
   printResults = () => {
-    console.log(githubContext.topics, 'printResults')
+    //console.log(githubContext.topics, 'printResults')
+    console.log(githubContext.textFromSearch, 'printTextInput')
   }
 
   return (

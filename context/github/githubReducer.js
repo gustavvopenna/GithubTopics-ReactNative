@@ -1,4 +1,4 @@
-import { GET_TOPICS } from '../types'
+import { GET_TOPICS, SET_TEXT_FROM_SEARCH } from '../types'
 
 export default (state, action) => {
   switch (action.type) {
@@ -8,6 +8,11 @@ export default (state, action) => {
         topics: action.payload
       }
 
+    case SET_TEXT_FROM_SEARCH:
+      return {
+        ...state,
+        textFromSearch: action.payload
+      }
     default:
       return state
   }

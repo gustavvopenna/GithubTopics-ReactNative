@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import GithubContext from './githubContext'
 import GithubReducer from './githubReducer'
-import { GET_TOPICS } from '../types'
+import { GET_TOPICS, SET_TEXT_FROM_SEARCH } from '../types'
 
 import GithubService from '../../services/index'
 const service = new GithubService()
@@ -9,7 +9,7 @@ const service = new GithubService()
 const GithubState = props => {
   const initialState = {
     topics: [],
-    test: 'testing this shit'
+    textFromSearch: ''
   }
 
   const [state, dispatch] = useReducer(GithubReducer, initialState)
@@ -25,9 +25,22 @@ const GithubState = props => {
     })
   }
 
+  // Set Text to state when user make a search
+  const setTextFromInput = text => {
+    dispatch({
+      type: SET_TEXT_FROM_SEARCH,
+      payload: text
+    })
+  }
+
   return (
     <GithubContext.Provider
-      value={{ topics: state.topics, test: state.test, searchTopics }}
+      value={{
+        topics: state.topics,
+        textFromSearch: state.textFromSearch,
+        searchTopics,
+        setTextFromInput
+      }}
     >
       {props.children}
     </GithubContext.Provider>
