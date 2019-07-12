@@ -16,14 +16,13 @@ const GithubState = props => {
 
   // Search topics
   const searchTopics = async text => {
-    console.log(state.topics, 'antes')
     const res = await service.getTopics(text)
+    console.log(res.data.items[0])
 
     dispatch({
-      action: GET_TOPICS,
-      payload: res.data
+      type: GET_TOPICS,
+      payload: res.data.items
     })
-    console.log(state.topics, 'despues')
   }
 
   return (

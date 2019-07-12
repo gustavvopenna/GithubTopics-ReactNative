@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { TouchableOpacity, ScrollView } from 'react-native'
 import styled from 'styled-components'
 import { NotificationIcon } from './components/Icons'
@@ -6,10 +6,13 @@ import { Icon } from 'expo'
 import Card from './components/Card'
 
 import GithubState from './context/github/GithubState'
+import GithubContext from './context/github/githubContext'
 
 const App = () => {
   const [text, setText] = useState('Escribe aquí')
   const [inputFocus, setInputFocus] = useState(false)
+
+  const githubContext = useContext(GithubContext)
 
   // const fetchData = async () => {
   //   const res = await githubContext.searchTopics('react')
@@ -23,6 +26,10 @@ const App = () => {
 
   handleInputFocus = () => {
     setInputFocus(true)
+  }
+
+  handleSubmit = async () => {
+    await githubContext.searchTopics('react')
   }
 
   return (
@@ -44,7 +51,7 @@ const App = () => {
             value={text}
             onFocus={this.handleInputFocus}
           />
-          <TouchableOpacity>
+          <TouchableOpacity onPress={this.handleSubmit}>
             <Icon.Ionicons name="ios-search" size={40} color="#4775f2" />
           </TouchableOpacity>
         </InputWrapper>
