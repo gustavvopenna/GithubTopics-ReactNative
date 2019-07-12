@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
-
 import { NotificationIcon } from './components/Icons'
+import { Icon } from 'expo'
 
 export default function App() {
+  const [text, setText] = useState('Escribe aquí')
+  const [inputFocus, setInputFocus] = useState(false)
+
+  handleInputFocus = () => {
+    setInputFocus(true)
+  }
+
   return (
     <Container>
       <TitleBar>
@@ -14,6 +22,18 @@ export default function App() {
           style={{ position: 'absolute', right: 20, top: 5, zIndex: 1 }}
         />
       </TitleBar>
+      <InputWrapper>
+        <Input
+          placeholder={text}
+          clearTextOnFocus={true}
+          onChangeText={texto => setText(texto)}
+          value={text}
+          onFocus={this.handleInputFocus}
+        />
+        <TouchableOpacity>
+          <Icon.Ionicons name="ios-search" size={40} color="#4775f2" />
+        </TouchableOpacity>
+      </InputWrapper>
     </Container>
   )
 }
@@ -48,4 +68,22 @@ const Name = styled.Text`
   font-size: 22px;
   font-weight: bold;
   color: #3c4560;
+`
+
+const InputWrapper = styled.View`
+  width: 90%;
+  margin: 20px auto;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const Input = styled.TextInput`
+  padding-left: 20px;
+  width: 87%;
+  height: 40px;
+  color: #b8bece;
+  background-color: white;
+  border-radius: 22px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
 `
