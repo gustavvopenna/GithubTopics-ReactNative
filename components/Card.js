@@ -7,10 +7,8 @@ import GithubContext from '../context/github/githubContext'
 const Card = props => {
   const githubContext = useContext(GithubContext)
 
-  useEffect(() => {}, [])
-
-  handleSubmit = async () => {
-    await githubContext.searchTopics('react')
+  printResults = () => {
+    console.log(githubContext.topics, 'printResults')
   }
 
   return (
@@ -18,7 +16,9 @@ const Card = props => {
       <TouchableOpacity onPress={this.handleSubmit}>
         <Title>{props.title}</Title>
       </TouchableOpacity>
-      <Subtitle>{props.subtitle}</Subtitle>
+      <TouchableOpacity onPress={this.printResults}>
+        <Subtitle>{props.subtitle}</Subtitle>
+      </TouchableOpacity>
     </Container>
   )
 }
