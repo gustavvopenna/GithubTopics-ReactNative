@@ -36,6 +36,10 @@ const HomeScreen = props => {
 
 export default HomeScreen
 
+HomeScreen.navigationOptions = {
+  header: null
+}
+
 const Container = styled.View`
   flex: 1;
   background: #f0f3f5;

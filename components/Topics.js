@@ -25,7 +25,9 @@ const Topics = props => {
             <TouchableOpacity
               key={i}
               onPress={() => {
-                props.navigation.push('Description')
+                props.navigation.push('Description', {
+                  currentTopic: topic.name
+                })
               }}
             >
               <Card title={topic.name} subtitle={topic.short_description} />

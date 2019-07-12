@@ -17,7 +17,7 @@ const GithubState = props => {
   // Search topics
   const searchTopics = async text => {
     const res = await service.getTopics(text)
-    console.log(res.data.items[0])
+    console.log(res.data.items)
 
     dispatch({
       type: GET_TOPICS,
