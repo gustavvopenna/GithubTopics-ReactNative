@@ -5,45 +5,65 @@ import { NotificationIcon } from './components/Icons'
 import { Icon } from 'expo'
 import Card from './components/Card'
 
-export default function App() {
+import GithubState from './context/github/GithubState'
+
+const App = () => {
   const [text, setText] = useState('Escribe aquí')
   const [inputFocus, setInputFocus] = useState(false)
+
+  // const fetchData = async () => {
+  //   const res = await githubContext.searchTopics('react')
+  //   console.log(await githubContext.topics)
+  // }
+
+  // useEffect(() => {
+  //   fetchData()
+  //   console.log(githubContext.test)
+  // }, [])
 
   handleInputFocus = () => {
     setInputFocus(true)
   }
 
   return (
-    <Container>
-      <TitleBar>
-        <Avatar source={require('./assets/avatar.jpg')} />
-        <Title>Welcome back,</Title>
-        <Name>Gustavo</Name>
-        <NotificationIcon
-          style={{ position: 'absolute', right: 20, top: 5, zIndex: 1 }}
-        />
-      </TitleBar>
-      <InputWrapper>
-        <Input
-          placeholder={text}
-          clearTextOnFocus={true}
-          onChangeText={texto => setText(texto)}
-          value={text}
-          onFocus={this.handleInputFocus}
-        />
-        <TouchableOpacity>
-          <Icon.Ionicons name="ios-search" size={40} color="#4775f2" />
-        </TouchableOpacity>
-      </InputWrapper>
-      <Subtitle>Results</Subtitle>
-      <ScrollView>
-        {topics.map((topic, i) => (
-          <Card key={i} title={topic.name} subtitle={topic.short_description} />
-        ))}
-      </ScrollView>
-    </Container>
+    <GithubState>
+      <Container>
+        <TitleBar>
+          <Avatar source={require('./assets/avatar.jpg')} />
+          <Title>Welcome back,</Title>
+          <Name>Gustavo</Name>
+          <NotificationIcon
+            style={{ position: 'absolute', right: 20, top: 5, zIndex: 1 }}
+          />
+        </TitleBar>
+        <InputWrapper>
+          <Input
+            placeholder={text}
+            clearTextOnFocus={true}
+            onChangeText={texto => setText(texto)}
+            value={text}
+            onFocus={this.handleInputFocus}
+          />
+          <TouchableOpacity>
+            <Icon.Ionicons name="ios-search" size={40} color="#4775f2" />
+          </TouchableOpacity>
+        </InputWrapper>
+        <Subtitle>Results</Subtitle>
+        <ScrollView>
+          {topics.map((topic, i) => (
+            <Card
+              key={i}
+              title={topic.name}
+              subtitle={topic.short_description}
+            />
+          ))}
+        </ScrollView>
+      </Container>
+    </GithubState>
   )
 }
+
+export default App
 
 const Container = styled.View`
   flex: 1;

@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 
-const Card = props => (
-  <Container>
-    <TouchableOpacity>
-      <Title>{props.title}</Title>
-    </TouchableOpacity>
-    <Subtitle>{props.subtitle}</Subtitle>
-  </Container>
-)
+import GithubContext from '../context/github/githubContext'
+
+const Card = props => {
+  const githubContext = useContext(GithubContext)
+
+  useEffect(() => {
+    console.log(githubContext.test)
+    console.log('hollaaaaaa')
+  }, [])
+
+  return (
+    <Container>
+      <TouchableOpacity>
+        <Title>
+          {props.title}
+          {githubContext.test}
+        </Title>
+      </TouchableOpacity>
+      <Subtitle>{props.subtitle}</Subtitle>
+    </Container>
+  )
+}
 
 export default Card
 
