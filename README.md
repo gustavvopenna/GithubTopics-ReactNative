@@ -51,6 +51,9 @@ Then, inside Expo Tools, click on "Run on Android Device/Simulator". If the app 
 ## Screenshots
 
 ![image](https://drive.google.com/uc?export=view&id=1uJf8w1QpEhJBGqVIlm2fjNxlGsbIIXmp)
+![image](https://drive.google.com/uc?export=view&id=1Ggi7p5hMTF6njF1j5ehrSNLtpUbrgxpC)
+![image](https://drive.google.com/uc?export=view&id=1MvQb5dJaIoO6Mvdt8GLPPGPH3b4WL4eA)
+![image](https://drive.google.com/uc?export=view&id=1j95RboTGsFOBe1Iw4zdnE9Vnx2QDKMaS)
 
 
 
