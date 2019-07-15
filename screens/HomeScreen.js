@@ -1,5 +1,5 @@
-import React, { useEffect, useContext } from 'react'
-import { ScrollView, SafeAreaView } from 'react-native'
+import React, { useContext } from 'react'
+import { ScrollView, SafeAreaView, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 import { NotificationIcon } from '../components/Icons'
 import SearchBar from '../components/SearchBar'
@@ -12,11 +12,6 @@ import GithubContext from '../context/github/githubContext'
 
 const HomeScreen = props => {
   const githubContext = useContext(GithubContext)
-
-  useEffect(() => {
-    console.log(props)
-    console.log(githubContext.latestSearches, 'HOMESCREEN')
-  }, [])
 
   return (
     <Container>
