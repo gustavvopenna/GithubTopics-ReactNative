@@ -96,7 +96,7 @@ const Name = styled.Text`
 `
 
 const Creator = styled.Text`
-  color: #b8bece;
+  color: white;
   font-size: 22px;
 `
 

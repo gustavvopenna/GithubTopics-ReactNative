@@ -11,6 +11,10 @@ const TestScreen = () => {
 
 export default TestScreen
 
+TestScreen.navigationOptions = {
+  header: null
+}
+
 const Container = styled.View`
   flex: 1;
   align-items: center;

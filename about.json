@@ -1,0 +1,23 @@
+{
+  "name": "Gustavo Peña",
+  "address": {
+    "text": "CDMX, Mexico",
+    "icon": "ios-pin"
+  },
+  "email": {
+    "text": "gustavo.pema@gmail.com",
+    "icon": "ios-mail"
+  },
+  "phone": {
+    "text": "55-6376-8310",
+    "icon": "ios-call"
+  },
+  "linkedIn": {
+    "text": "linkedin.com/in/gustavo-peña",
+    "icon": "logo-linkedin"
+  },
+  "github": {
+    "text": "github.com/gustavvopenna",
+    "icon": "logo-github"
+  }
+}

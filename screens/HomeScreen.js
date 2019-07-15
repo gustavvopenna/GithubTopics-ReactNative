@@ -22,17 +22,17 @@ const HomeScreen = props => {
     <Container>
       <TopicDescription />
       <SafeAreaView>
-        {/* <ScrollView style={{ height: '100%' }}> */}
-        <TitleBar>
-          <Avatar source={require('../assets/avatar.jpg')} />
-          <Title>Welcome back,</Title>
-          <Name>Gustavo</Name>
-          <NotificationIcon
-            style={{ position: 'absolute', right: 20, top: 5, zIndex: 1 }}
-          />
-        </TitleBar>
-        <SearchBar />
-        <ScrollView>
+        <ScrollView style={{ height: '100%' }}>
+          <TitleBar>
+            <Avatar source={require('../assets/avatar.jpg')} />
+            <Title>Welcome back,</Title>
+            <Name>Gustavo</Name>
+            <NotificationIcon
+              style={{ position: 'absolute', right: 20, top: 5, zIndex: 1 }}
+            />
+          </TitleBar>
+          <SearchBar />
+          {/* <ScrollView> */}
           {githubContext.latestSearches.length > 0 && (
             <Subtitle text="Latest searchs" />
           )}
@@ -41,8 +41,8 @@ const HomeScreen = props => {
           )}
           <Subtitle results={githubContext.topics.length} text="Results" />
           <Topics navigation={props.navigation} />
+          {/* </ScrollView> */}
         </ScrollView>
-        {/* </ScrollView> */}
       </SafeAreaView>
     </Container>
   )
