@@ -31,6 +31,7 @@ const Container = styled.View`
   padding: 20px;
   border-radius: 14px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  elevation: 1;
 `
 
 const Title = styled.Text`
