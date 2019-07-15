@@ -1,10 +1,10 @@
 # GithubTopics
 
-Search featured Github topics easily and save your recent searches and see the topic details.
+😸🐙💻 Search featured Github topics easily and save your recent searches and see the topic details.
 
 ## Technologies
 
-Build with React 16.8 (Hooks), React Native, Styled Components, Expo, GitHub API and Context API as Global State Management System.
+Built with React 16.8 (Hooks), React Native, Styled Components, Expo, GitHub API and Context API as Global State Management System.
 
 ## Installation
 
