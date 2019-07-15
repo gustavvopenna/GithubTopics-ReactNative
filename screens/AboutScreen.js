@@ -1,4 +1,5 @@
 import React from 'react'
+import { Linking, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 import data from '../about.json'
 import * as Icon from '@expo/vector-icons'
@@ -27,15 +28,27 @@ const AboutScreen = () => {
           <Text>{data.phone.text}</Text>
         </Row>
 
-        <Row>
-          <Icon.Ionicons name={data.linkedIn.icon} size={36} color="#3c4560" />
-          <Text>{data.linkedIn.text}</Text>
-        </Row>
+        <TouchableOpacity
+          onPress={() => Linking.openURL(`https://${data.linkedIn.text}`)}
+        >
+          <Row>
+            <Icon.Ionicons
+              name={data.linkedIn.icon}
+              size={36}
+              color="#3c4560"
+            />
+            <Text>{data.linkedIn.text}</Text>
+          </Row>
+        </TouchableOpacity>
 
-        <Row>
-          <Icon.Ionicons name={data.github.icon} size={36} color="#3c4560" />
-          <Text>{data.github.text}</Text>
-        </Row>
+        <TouchableOpacity
+          onPress={() => Linking.openURL(`https://${data.github.text}`)}
+        >
+          <Row>
+            <Icon.Ionicons name={data.github.icon} size={36} color="#3c4560" />
+            <Text>{data.github.text}</Text>
+          </Row>
+        </TouchableOpacity>
       </Content>
     </Container>
   )
