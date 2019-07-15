@@ -30,7 +30,10 @@ const Topics = props => {
                 })
               }}
             >
-              <Card title={topic.name} subtitle={topic.short_description} />
+              <Card
+                title={topic.display_name}
+                subtitle={topic.short_description}
+              />
             </TouchableOpacity>
           ))}
         </ScrollView>
