@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { ScrollView, SafeAreaView } from 'react-native'
 import styled from 'styled-components'
 import { NotificationIcon } from '../components/Icons'
@@ -6,10 +6,16 @@ import SearchBar from '../components/SearchBar'
 import Topics from '../components/Topics'
 import Subtitle from '../components/Subtitle'
 import TopicDescription from '../components/TopicDescription'
+import LatestSearch from '../components/LatestSearch'
+
+import GithubContext from '../context/github/githubContext'
 
 const HomeScreen = props => {
+  const githubContext = useContext(GithubContext)
+
   useEffect(() => {
     console.log(props)
+    console.log(githubContext.latestSearches, 'HOMESCREEN')
   }, [])
 
   return (
@@ -26,7 +32,13 @@ const HomeScreen = props => {
             />
           </TitleBar>
           <SearchBar />
-          <Subtitle text="Results" />
+          {githubContext.latestSearches.length > 0 && (
+            <Subtitle text="Latest searchs" />
+          )}
+          {githubContext.latestSearches.length > 0 && (
+            <LatestSearch words={githubContext.latestSearches} />
+          )}
+          <Subtitle results={githubContext.topics.length} text="Results" />
           <Topics navigation={props.navigation} />
         </ScrollView>
       </SafeAreaView>

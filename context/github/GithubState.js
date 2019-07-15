@@ -1,7 +1,11 @@
 import React, { useReducer } from 'react'
 import GithubContext from './githubContext'
 import GithubReducer from './githubReducer'
-import { GET_TOPICS, SET_TEXT_FROM_SEARCH } from '../types'
+import {
+  GET_TOPICS,
+  SET_TEXT_FROM_SEARCH,
+  ADD_WORD_TO_LATEST_SEARCHES
+} from '../types'
 
 import GithubService from '../../services/index'
 const service = new GithubService()
@@ -9,7 +13,8 @@ const service = new GithubService()
 const GithubState = props => {
   const initialState = {
     topics: [],
-    textFromSearch: ''
+    textFromSearch: '',
+    latestSearches: []
   }
 
   const [state, dispatch] = useReducer(GithubReducer, initialState)
@@ -33,13 +38,23 @@ const GithubState = props => {
     })
   }
 
+  // Add search to the Latest Searches Array
+  const addWordToLatestSearch = word => {
+    dispatch({
+      type: ADD_WORD_TO_LATEST_SEARCHES,
+      payload: word
+    })
+  }
+
   return (
     <GithubContext.Provider
       value={{
         topics: state.topics,
         textFromSearch: state.textFromSearch,
+        latestSearches: state.latestSearches,
         searchTopics,
-        setTextFromInput
+        setTextFromInput,
+        addWordToLatestSearch
       }}
     >
       {props.children}

@@ -11,6 +11,7 @@ const DescriptionScreen = props => {
   const githubContext = useContext(GithubContext)
   const [currentTopic, setCurrentTopic] = useState({})
 
+  // Getting props from react navigation
   const topicName = props.navigation.getParam('currentTopic', 'default')
 
   useEffect(() => {
@@ -20,16 +21,13 @@ const DescriptionScreen = props => {
   }, [])
 
   const lastUpdate = (text = '') => {
-    //console.log(text, 'LA PUTA FECHA')
     const lastPosition = text.indexOf('T')
     const newText = text.slice(0, lastPosition)
     return <Text>{newText}</Text>
   }
 
   const renderImage = arr => {
-    console.log(arr.length, 'length')
     const random = Math.floor(Math.random() * arr.length)
-    console.log(random, 'random')
     return <Image source={arr[random].background} />
   }
 

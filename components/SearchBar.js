@@ -18,6 +18,7 @@ const SearchBar = () => {
   handleSubmit = async () => {
     await githubContext.searchTopics(text)
     githubContext.setTextFromInput(text)
+    githubContext.addWordToLatestSearch(text)
     setText('')
   }
 

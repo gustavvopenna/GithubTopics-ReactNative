@@ -7,7 +7,7 @@ const Subtitle = props => {
 
   return (
     <Container>
-      {githubContext.topics.length} {props.text}
+      {props.results > 0 && props.results} {props.text}
     </Container>
   )
 }
