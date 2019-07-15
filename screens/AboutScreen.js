@@ -70,7 +70,7 @@ const Cover = styled.View`
   height: 250px;
   align-items: center;
   justify-content: center;
-  margin-top: 160px;
+  margin-top: 180px;
 `
 
 const Image = styled.Image`
