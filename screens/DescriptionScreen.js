@@ -106,7 +106,7 @@ const Content = styled.View`
 `
 
 const Text = styled.Text`
-  color: black;
+  color: #3c4560;
   font-size: 18px;
 `
 
