@@ -17,8 +17,8 @@ const SearchBar = () => {
 
   handleSubmit = async () => {
     await githubContext.searchTopics(text)
-    console.log(text, 'texto enviado en el input')
     githubContext.setTextFromInput(text)
+    setText('')
   }
 
   return (
