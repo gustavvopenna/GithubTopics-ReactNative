@@ -27,7 +27,7 @@ sudo npm install expo-cli --global
 Clone this repo
 
 ```
-git clone
+git clone https://github.com/gustavvopenna/GithubTopics-ReactNative.git
 ```
 
 Inside the folder you already cloned, run
