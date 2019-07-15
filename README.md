@@ -1,9 +1,9 @@
 # GithubTopics
 💻🆕 Build with React 16.8 (Hooks), React Native, Styled Components, Expo, GitHub API, Context API as Global State Management System
 
-##Installation
+## Installation
 
-###Pre requirements
+### Pre requirements
 
 Have already installed Node.js
 
@@ -11,7 +11,7 @@ If you want yo run on Android, install Android Studio
 
 If you want to run on iOS, install Xcode and Xcode Command Line Tools
 
-###Instructions
+### Instructions
 
 Install expo
 
@@ -33,11 +33,11 @@ expo start
 
 Now inside the Expo Tools window
 
-####If you want to run on iOS
+#### If you want to run on iOS
 
 Inside Expo Tools, click on "iOS Simulator". If the simulator is open but not the app, click again.
 
-####If you want to run on Android
+#### If you want to run on Android
 
 First, open a new devie on Android Studio.
 
