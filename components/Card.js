@@ -25,7 +25,6 @@ export default Card
 const Container = styled.View`
   background: white;
   width: 90%;
-  height: 100px;
   margin-left: 20px;
   margin-top: 20px;
   padding: 20px;
