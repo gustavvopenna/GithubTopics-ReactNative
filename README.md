@@ -48,6 +48,10 @@ First, open a new device on Android Studio.
 
 Then, inside Expo Tools, click on "Run on Android Device/Simulator". If the app does not open, click again.
 
+## Screenshots
+
+![image](https://drive.google.com/uc?export=view&id=1913oZeBZPBNiUuk8gu3ZSbLBA2l_VQtG)
+
 
 
 
