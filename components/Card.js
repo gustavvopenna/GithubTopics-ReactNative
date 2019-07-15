@@ -7,11 +7,6 @@ import GithubContext from '../context/github/githubContext'
 const Card = props => {
   const githubContext = useContext(GithubContext)
 
-  // printResults = () => {
-  //   //console.log(githubContext.topics, 'printResults')
-  //   console.log(githubContext.textFromSearch, 'printTextInput')
-  // }
-
   return (
     <Container>
       <Title>{props.title}</Title>

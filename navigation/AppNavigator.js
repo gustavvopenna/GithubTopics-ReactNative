@@ -3,6 +3,7 @@ import HomeScreen from '../screens/HomeScreen'
 import TopicDescription from '../components/TopicDescription'
 import TestScreen from '../screens/TestScreen'
 import DescriptionScreen from '../screens/DescriptionScreen'
+import TabNavigator from './TabNavigator'
 
 const AppNavigator = createStackNavigator(
   {
@@ -15,4 +16,4 @@ const AppNavigator = createStackNavigator(
   }
 )
 
-export default createAppContainer(AppNavigator)
+export default createAppContainer(TabNavigator)
